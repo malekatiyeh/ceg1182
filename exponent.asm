@@ -6,25 +6,23 @@ LD R1, Y
 AND R2, R2, #0
 ADD R2, R2, #1
 
+ADD R1, R1, #0
+BRz DONE
+
 EXP_LOOP
 AND R3, R3, #0
-
-
 ADD R4, R0, #0
 
 MULT_LOOP
 ADD R3, R3, R2
-ADD R4, R4, #-1  
+ADD R4, R4, #-1
 BRp MULT_LOOP
 
-
 ADD R2, R3, #0
-
-
 ADD R1, R1, #-1
 BRp EXP_LOOP
 
-
+DONE
 LD R5, RESULT_ADDR
 STR R2, R5, #0
 
