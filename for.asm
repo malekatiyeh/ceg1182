@@ -1,0 +1,26 @@
+.ORIG x3000
+
+AND R0, R0, #0
+
+LD R1, LIMIT
+
+LOOP
+ADD R0, R0, #1    
+
+ 
+NOT R2, R1
+ADD R2, R2, #1
+ADD R2, R0, R2
+
+
+BRz DONE
+
+
+BRnzp LOOP
+
+DONE
+HALT
+
+LIMIT .FILL #5
+
+.END

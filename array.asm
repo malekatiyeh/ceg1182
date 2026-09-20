@@ -1,0 +1,31 @@
+.ORIG x3000
+
+LEA R1, ARRAY
+
+LD R2, SIZE
+
+INPUT_LOOP
+
+GETC
+
+LD R3, NEG48
+ADD R0, R0, R3
+
+
+STR R0, R1, #0
+
+ADD R1, R1, #1
+
+
+ADD R2, R2, #-1
+
+
+BRp INPUT_LOOP
+
+HALT
+
+SIZE    .FILL #5
+NEG48    .FILL #-48
+ARRAY    .BLKW #5
+
+.END
